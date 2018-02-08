@@ -34,11 +34,6 @@ xcuserdata
 # AppCode
 .idea/
 
-# Carthage
-Carthage/Build
-Carthage/Checkouts
-Carthage/Cartfile.resolved
-
 # Inspector files
 Inspector/node_modules
 
