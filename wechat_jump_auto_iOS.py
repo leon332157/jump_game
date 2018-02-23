@@ -25,7 +25,7 @@ from PIL import Image, ImageDraw
 import wda
 
 
-with open('config/default.json', 'r') as f:
+with open('config.json', 'r') as f:
     config = json.load(f)
 
 
@@ -47,7 +47,7 @@ swipe = config.get('swipe', {
     "y2": 410
     })
 
-c = wda.Client('http://127.0.0.1:8100')
+c = wda.Client()
 s = c.session()
 
 screenshot_backup_dir = 'screenshot_backups/'
@@ -62,7 +62,7 @@ def pull_screenshot():
 def jump(distance):
     press_time = distance * time_coefficient / 1000
     print('press time: {}'.format(press_time))
-    s.tap_hold(200, 200, press_time)
+    s.tap_hold(random.uniform(0, 320), random.uniform(64, 320), press_time)
 
 
 def backup_screenshot(ts):
